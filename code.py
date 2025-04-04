@@ -1,5 +1,5 @@
 import streamlit as st
-import google as genai
+from google import genai
 api_key = st.secrets["GENAI_API_KEY"]
 client=genai.Client(api_key=api_key)
 counter=1
