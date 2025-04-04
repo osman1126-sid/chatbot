@@ -23,9 +23,8 @@ while counter!=0:
     prompt=f""" user asked "{user_prompt}", you have this data"{text}",
     Respond to the user based on the data. If the query is out of context, reply with 'Not known'."""
 
-    response = genai.generate_content(
-    model="gemini-2.0-flash", contents=[{"role": "user", "parts": [{"text": prompt}]}]
-     )
+    response = genai.generate_text(
+    model="gemini-2.0-flash", contents=[{"role": "user", "parts": [{"text": prompt}]}])
    
     st.markdown(f"**Gemini:** {response.text}")
 
