@@ -1,6 +1,5 @@
 import google.generativeai as genai
 client=genai.Client(api_key="AIzaSyBnA2N4x0pW4a6XnedNAB92PlXZRs5AFLY")
-counter=1
 text="""FARHAN SIDDIQUE Dept: Electronics & Communication Engineering 
     Year of Graduation: 2019 Degree: B-TechCollege: Durgapur Institute of Advanced Technology & Management
     .E-Mail:farhansiddique027@gmail.com Phone No:09064654440(M)/8927141595 OBJECTIVE:Seeking a position in well renowned sector
@@ -13,7 +12,6 @@ while counter!=0:
     user_prompt=input("You: ")
     
     if user_prompt=="exit" :
-        counter=0
         break
     
     prompt=f""" user asked "{user_prompt}", you have this data"{text}",
