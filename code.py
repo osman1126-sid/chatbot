@@ -2,6 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 api_key = st.secrets["GENAI_API_KEY"]
 genai.configure(api_key=api_key)
+counter=1
 text="""FARHAN SIDDIQUE Dept: Electronics & Communication Engineering 
     Year of Graduation: 2019 Degree: B-TechCollege: Durgapur Institute of Advanced Technology & Management
     .E-Mail:farhansiddique027@gmail.com Phone No:09064654440(M)/8927141595 OBJECTIVE:Seeking a position in well renowned sector
