@@ -18,6 +18,7 @@ text="""FARHAN SIDDIQUE Dept: Electronics & Communication Engineering
 while counter!=0:
     user_prompt = st.text_input("💬 You:", "")
     if user_prompt=="exit" :
+        counter=0
         break
     
     prompt=f""" user asked "{user_prompt}", you have this data"{text}",
