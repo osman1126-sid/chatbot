@@ -1,10 +1,10 @@
 import streamlit as st
-# import google.generativeai as genai
-# api_key = st.secrets["GENAI_API_KEY"]
-# genai.configure(api_key=api_key)
+import google.generativeai as genai
+api_key = st.secrets["GENAI_API_KEY"]
+genai.configure(api_key=api_key)
 counter=1
 st.set_page_config(page_title="Gemini Chatbot", layout="centered")
-st.title("🤖 Gemini Chatbot")
+st.title("Gemini Chatbot")
 st.write("Ask me anything based on the given data. If I don't know the answer, I'll reply with 'Not known'.")
 
 text="""FARHAN SIDDIQUE Dept: Electronics & Communication Engineering 
@@ -20,15 +20,15 @@ while counter!=0:
     if user_prompt=="exit" :
         break
     
-    # prompt=f""" user asked "{user_prompt}", you have this data"{text}",
-    # Respond to the user based on the data. If the query is out of context, reply with 'Not known'."""
+    prompt=f""" user asked "{user_prompt}", you have this data"{text}",
+    Respond to the user based on the data. If the query is out of context, reply with 'Not known'."""
 
-    # response = genai.generate_content(
-    # model="gemini-2.0-flash", contents=[{"role": "user", "parts": [{"text": prompt}]}]
-    #)
+    response = genai.generate_content(
+    model="gemini-2.0-flash", contents=[{"role": "user", "parts": [{"text": prompt}]}]
+     )
    
-    # st.markdown(f"**🤖 Gemini:** {response.text}")
+    st.markdown(f"**Gemini:** {response.text}")
 
 # Exit button
-if st.button("🚪 Exit Chat"):
+if st.button(" Exit Chat"):
     st.stop()
