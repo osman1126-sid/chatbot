@@ -1,4 +1,3 @@
-
 import google.generativeai as genai
 client=genai.Client(api_key="AIzaSyBnA2N4x0pW4a6XnedNAB92PlXZRs5AFLY")
 counter=1
