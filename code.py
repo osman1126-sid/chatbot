@@ -30,5 +30,3 @@ while counter!=0:
     st.markdown(f"**Gemini:** {response.text}")
 
 # Exit button
-if st.button(" Exit Chat"):
-    st.stop()
