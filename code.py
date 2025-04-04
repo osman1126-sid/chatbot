@@ -1,5 +1,7 @@
+import streamlit as st
 import google.generativeai as genai
-client=genai.Client(api_key="GENAI_API_KEY ")
+api_key = st.secrets["GENAI_API_KEY"]
+genai.configure(api_key=api_key)
 text="""FARHAN SIDDIQUE Dept: Electronics & Communication Engineering 
     Year of Graduation: 2019 Degree: B-TechCollege: Durgapur Institute of Advanced Technology & Management
     .E-Mail:farhansiddique027@gmail.com Phone No:09064654440(M)/8927141595 OBJECTIVE:Seeking a position in well renowned sector
@@ -17,7 +19,7 @@ while counter!=0:
     prompt=f""" user asked "{user_prompt}", you have this data"{text}",
     Respond to the user based on the data. If the query is out of context, reply with 'Not known'."""
 
-    response = client.models.generate_content(
+    response = genai.generate_content(
     model="gemini-2.0-flash", contents=[{"role": "user", "parts": [{"text": prompt}]}]
     )
     print("Gemini:",response.text)
