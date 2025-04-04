@@ -25,7 +25,7 @@ while counter!=0:
 
     # response = genai.generate_content(
     # model="gemini-2.0-flash", contents=[{"role": "user", "parts": [{"text": prompt}]}]
-    )
+    #)
    
     # st.markdown(f"**🤖 Gemini:** {response.text}")
 
