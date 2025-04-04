@@ -1,8 +1,8 @@
-# import streamlit as st
+ import streamlit as st
 # import google.generativeai as genai
 # api_key = st.secrets["GENAI_API_KEY"]
 # genai.configure(api_key=api_key)
- counter=1
+counter=1
 st.set_page_config(page_title="Gemini Chatbot", layout="centered")
 st.title("🤖 Gemini Chatbot")
 st.write("Ask me anything based on the given data. If I don't know the answer, I'll reply with 'Not known'.")
