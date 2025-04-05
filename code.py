@@ -1,6 +1,6 @@
 import PyPDF2
 import streamlit as st
-from google import genai
+from google-genai import genai
 api_key = st.secrets["GENAI_API_KEY"]
 client=genai.Client(api_key=api_key)
 counter=1
