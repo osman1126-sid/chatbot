@@ -33,6 +33,6 @@ while counter!=0:
     response=client.models.generate_content(
     model="gemini-2.0-flash", contents=[{"role": "user", "parts": [{"text": prompt}]}])
    
-    st.markdown(f"**Gemini:** {response.text}")
+    print(f"**Gemini:** {response.text}")
 
 # Exit button
