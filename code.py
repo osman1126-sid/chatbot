@@ -21,12 +21,7 @@ if uploaded_file is not None:
             text += texxt + "\n"
 
     st.success("Text extracted and stored in 'doc' variable ✅")
-while counter!=0:
-    user_prompt = st.text_input("💬 You:", "")
-    if user_prompt=="exit" :
-        counter=0
-        break
-    
+def generate_t(user_prompt):
     prompt=f""" user asked "{user_prompt}", you have this data"{text}",
     Respond to the user based on the data. If the query is out of context, reply with 'Not known'."""
 
@@ -34,5 +29,14 @@ while counter!=0:
     model="gemini-2.0-flash", contents=[{"role": "user", "parts": [{"text": prompt}]}])
    
     st.markdown(f"**Gemini:** {response.text}")
+    
+while counter!=0:
+    user_prompt = st.text_input("💬 You:", "")
+    if user_prompt=="exit" :
+        counter=0
+        break
+    generate_t(user_prompt)
+    
+    
 
 # Exit button
