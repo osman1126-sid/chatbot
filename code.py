@@ -21,6 +21,12 @@ if uploaded_file is not None:
             text += texxt + "\n"
 
     st.success("Text extracted and stored in 'doc' variable ✅")
+if 'clicked' not in st.session_state:
+    st.session_state.clicked = False
+def click_button():
+    st.session_state.clicked=True
+user_prompt = st.text_input("💬 You:", "")
+st.button('Generate Text', on_click=click_button)
 def generate_t(user_prompt):
     prompt=f""" user asked "{user_prompt}", you have this data"{text}",
     Respond to the user based on the data. If the query is out of context, reply with 'Not known'."""
@@ -30,12 +36,16 @@ def generate_t(user_prompt):
    
     st.markdown(f"**Gemini:** {response.text}")
     
-while counter!=0:
-    user_prompt = st.text_input("💬 You:", "")
-    if user_prompt=="exit" :
-        counter=0
-        break
+if st.session_state.clicked:
+    # The message and nested widget will remain on the page
     generate_t(user_prompt)
+
+# while counter!=0:
+#     user_prompt = st.text_input("💬 You:", "")
+#     if user_prompt=="exit" :
+#         counter=0
+#         break
+#     generate_t(user_prompt)
     
     
 
